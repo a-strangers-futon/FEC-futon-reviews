@@ -24,7 +24,7 @@ hr {
   margin-top: 20px;
 }
 .rev-above-reviews {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 /**********STAR COMPONENT**********/
@@ -54,15 +54,15 @@ hr {
 }
 
 .rev-stars-0:after { width: 0%; }
-.rev-stars-1:after { width: 7%; }
+.rev-stars-1:after { width: 8%; }
 .rev-stars-2:after { width: 20%; }
-.rev-stars-3:after { width: 27%; }
+.rev-stars-3:after { width: 28%; }
 .rev-stars-4:after { width: 40%; }
-.rev-stars-5:after { width: 47%; }
+.rev-stars-5:after { width: 48%; }
 .rev-stars-6:after { width: 60%; }
-.rev-stars-7:after { width: 67%; }
+.rev-stars-7:after { width: 68%; }
 .rev-stars-8:after { width: 80%; }
-.rev-stars-9:after { width: 87%; }
+.rev-stars-9:after { width: 88%; }
 .rev-stars-10:after { width: 100%;}
 
 
@@ -71,6 +71,7 @@ hr {
   display: flex;
   position: relative;
   width: auto;
+  margin-bottom: 10px;
 }
 .rev-left-container {
   display: flex;
@@ -233,8 +234,8 @@ hr {
   margin-left: 20px;
   margin-right: 20px;
   border: 1px solid rgb(41, 126, 113);
-  padding-left: 10px;
-  padding-right: 0px;
+  padding-left: 11px;
+  padding-right: 11px;
   padding-bottom: 6px;
   padding-top: 5px;
   border-radius: 15px;

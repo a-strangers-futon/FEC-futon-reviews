@@ -10,7 +10,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-
 app.set('port', 3003);
 app.use(express.json());
 
@@ -28,3 +27,5 @@ app.get('/api/reviews/:listingId', function (req, res) {
     }
   });
 });
+
+app.use('/:id', express.static(path.join(__dirname, '../client')))

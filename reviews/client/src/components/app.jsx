@@ -7,9 +7,17 @@ import Reviews from './Reviews.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    
+    var id = 1;
+
+    var path = window.location.pathname.split('/');
+    var pathId = Number.parseInt(path[1], 10);
+    if (!Number.isNaN(pathId)) {
+      id = pathId;
+    }
 
     this.state = {
-      listingId: 5,
+      listingId: id,
       rating: 0,
       accuracy: 0,
       communication: 0,
