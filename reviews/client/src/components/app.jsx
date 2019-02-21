@@ -42,7 +42,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3003/api/reviews/${this.state.listingId}`)
+    fetch(`/api/reviews/${this.state.listingId}`)
     .then((res) => res.json())
     .then((jsonRes) => this.setState({
       rating: Math.round(jsonRes[0].rating * 2),
