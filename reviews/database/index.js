@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var reviewsSchema = require('./schema.js');
 //use for local
-mongoose.connect('mongodb://localhost/testReviews');
+// mongoose.connect('mongodb://localhost/testReviews');
 //use for docker
-// mongoose.connect('mongodb://172.17.0.2:27017/testReviews');
+mongoose.connect('mongodb://172.17.0.2:27017/testReviews');
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
