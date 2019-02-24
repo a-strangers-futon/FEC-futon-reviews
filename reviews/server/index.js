@@ -1,4 +1,5 @@
 var express = require('express');
+var expressStaticGzip = require("express-static-gzip");
 var app = express();
 
 var path = require('path');
@@ -13,7 +14,15 @@ app.use(function(req, res, next) {
 app.set('port', 3003);
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../client')));
+app.use('/', expressStaticGzip(path.join(__dirname, '../client'), {
+  enableBrotli: true,
+  customCompressions: [{
+      encodingName: 'deflate',
+      fileExtension: 'zz'
+  }],
+  orderPreference: ['br', 'gz']
+}));
+// app.use(express.static(path.join(__dirname, '../client')));
 
 app.listen(app.get('port'));
 
@@ -28,4 +37,4 @@ app.get('/api/reviews/:listingId', function (req, res) {
   });
 });
 
-app.use('/:id', express.static(path.join(__dirname, '../client')))
+app.use('/:id', express.static(path.join(__dirname, '../client')));

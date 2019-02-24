@@ -1,4 +1,5 @@
 var path = require('path');
+var Compression = require('compression-webpack-plugin');
 var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/client/dist');
 
@@ -9,8 +10,8 @@ module.exports = {
     path: DIST_DIR
   },
   mode: 'development',
-  module : {
-    rules : [
+  module: {
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules | bower_components)/,
@@ -22,5 +23,14 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new Compression({
+      filename: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.7
+    })
+  ]
 };
